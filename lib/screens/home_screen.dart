@@ -223,7 +223,7 @@ class _HeroTitleCard extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(28),
-            boxShadow: [BoxShadow(color: title.accent.withOpacity(0.16), blurRadius: 26, offset: const Offset(0, 14))],
+            boxShadow: [BoxShadow(color: title.secondaryAccent.withOpacity(0.16), blurRadius: 26, offset: const Offset(0, 14))],
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(28),
@@ -252,7 +252,7 @@ class _HeroTitleCard extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('FEATURED UNIVERSE', style: TextStyle(color: title.accent, fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.4)),
+                            Text('FEATURED UNIVERSE', style: TextStyle(color: title.secondaryAccent, fontSize: 10, fontWeight: FontWeight.w900, letterSpacing: 1.4)),
                             const SizedBox(height: 6),
                             Text(title.name, style: const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w900, letterSpacing: -0.7)),
                             const SizedBox(height: 3),

@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+import 'firebase_options.dart';
 import 'services/app_controller.dart';
 import 'screens/app_shell.dart';
 import 'screens/auth_screen.dart';
 import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase before using any Firebase services
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const FandomVerseApp());
 }
 
@@ -48,10 +57,19 @@ class _FandomVerseAppState extends State<FandomVerseApp> {
               ),
             ),
             child: _showSplash
-                ? SplashScreen(key: const ValueKey('splash'), onFinished: () => setState(() => _showSplash = false))
+                ? SplashScreen(
+                    key: const ValueKey('splash'),
+                    onFinished: () => setState(() => _showSplash = false),
+                  )
                 : _app.isAuthenticated
-                    ? AppShell(key: const ValueKey('shell'), app: _app)
-                    : AuthScreen(key: const ValueKey('auth'), app: _app),
+                    ? AppShell(
+                        key: const ValueKey('shell'),
+                        app: _app,
+                      )
+                    : AuthScreen(
+                        key: const ValueKey('auth'),
+                        app: _app,
+                      ),
           ),
         );
       },

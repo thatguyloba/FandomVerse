@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "551155728334",
+    "project_id": "fandom-verse-c82de",
+    "storage_bucket": "fandom-verse-c82de.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551155728334:android:fc8b77f68041b8a075b59f",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551155728334-lelnrb1g3l9hgn3lejhhpabnb2ej3ifv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClfOvS-7lnyy9cujD1tLvKGuFkLDxwDKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551155728334-lelnrb1g3l9hgn3lejhhpabnb2ej3ifv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "551155728334-m5v70t4hig6lv8mm3igq602247hncss4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fandomVerse"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551155728334:android:6bd5e7c3d398b9e675b59f",
+        "android_client_info": {
+          "package_name": "com.example.fandom_verse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "551155728334-fp27db90cth64275r56ooti8c3kbg19b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fandom_verse",
+            "certificate_hash": "255ae51c93e72e7bee7f54add0f0516368f8c06a"
+          }
+        },
+        {
+          "client_id": "551155728334-lelnrb1g3l9hgn3lejhhpabnb2ej3ifv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClfOvS-7lnyy9cujD1tLvKGuFkLDxwDKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "551155728334-lelnrb1g3l9hgn3lejhhpabnb2ej3ifv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "551155728334-m5v70t4hig6lv8mm3igq602247hncss4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fandomVerse"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
