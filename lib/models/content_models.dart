@@ -13,6 +13,7 @@ class FandomTitle {
     required this.score,
     required this.meta,
     required this.episodes,
+    required this.image,
   });
 
   final String id;
@@ -26,6 +27,7 @@ class FandomTitle {
   final double score;
   final String meta;
   final int episodes;
+  final String image;
 }
 
 class NewsStory {
@@ -35,6 +37,7 @@ class NewsStory {
     required this.readTime,
     required this.accent,
     required this.icon,
+    required this.image,
   });
 
   final String title;
@@ -42,6 +45,7 @@ class NewsStory {
   final String readTime;
   final Color accent;
   final IconData icon;
+  final String image;
 }
 
 class FandomEvent {
@@ -52,6 +56,7 @@ class FandomEvent {
     required this.month,
     required this.accent,
     required this.description,
+    required this.image,
   });
 
   final String name;
@@ -60,6 +65,7 @@ class FandomEvent {
   final String month;
   final Color accent;
   final String description;
+  final String image;
 }
 
 class MerchItem {
@@ -69,6 +75,7 @@ class MerchItem {
     required this.category,
     required this.accent,
     required this.icon,
+    required this.image,
   });
 
   final String name;
@@ -76,4 +83,5 @@ class MerchItem {
   final String category;
   final Color accent;
   final IconData icon;
+  final String image;
 }

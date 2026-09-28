@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import '../models/content_models.dart';
 import '../theme/app_theme.dart';
@@ -51,7 +53,8 @@ class GlassCard extends StatelessWidget {
 }
 
 class SectionHeader extends StatelessWidget {
-  const SectionHeader({super.key, required this.title, this.action, this.onTap});
+  const SectionHeader(
+      {super.key, required this.title, this.action, this.onTap});
 
   final String title;
   final String? action;
@@ -80,7 +83,8 @@ class SectionHeader extends StatelessWidget {
 }
 
 class IconCircleButton extends StatelessWidget {
-  const IconCircleButton({super.key, required this.icon, this.onTap, this.badge});
+  const IconCircleButton(
+      {super.key, required this.icon, this.onTap, this.badge});
 
   final IconData icon;
   final VoidCallback? onTap;
@@ -148,30 +152,35 @@ class FandomArtwork extends StatelessWidget {
     final content = Stack(
       fit: StackFit.expand,
       children: [
-        DecoratedBox(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [title.accent, title.secondaryAccent, AppColors.inkSoft],
-              stops: const [0, 0.48, 1],
+        DecoratedBox(decoration: BoxDecoration(color: title.accent)),
+        Image.network(
+          title.image,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) => const ColoredBox(
+            color: AppColors.inkSoft,
+            child: Center(
+              child: Icon(Icons.broken_image_outlined,
+                  color: Color(0xB3FFFFFF), size: 34),
             ),
           ),
         ),
         Positioned(
           top: -34,
           right: -20,
-          child: _ArtworkOrb(size: compact ? 130 : 220, color: Colors.white.withOpacity(0.17)),
+          child: _ArtworkOrb(
+              size: compact ? 130 : 220, color: Colors.white.withOpacity(0.17)),
         ),
         Positioned(
           bottom: compact ? -30 : -54,
           left: compact ? -20 : -35,
-          child: _ArtworkOrb(size: compact ? 110 : 190, color: Colors.black.withOpacity(0.14)),
+          child: _ArtworkOrb(
+              size: compact ? 110 : 190, color: Colors.black.withOpacity(0.14)),
         ),
         Positioned(
           top: compact ? 20 : 34,
           right: compact ? 18 : 28,
-          child: Icon(title.icon, size: compact ? 58 : 94, color: Colors.white.withOpacity(0.82)),
+          child: Icon(title.icon,
+              size: compact ? 58 : 94, color: Colors.white.withOpacity(0.82)),
         ),
         Positioned(
           top: compact ? 26 : 48,
@@ -271,7 +280,8 @@ class EmptyLibrary extends StatelessWidget {
           children: [
             const FandomLogo(size: 74),
             const SizedBox(height: 22),
-            Text('Your shelf is waiting', style: Theme.of(context).textTheme.headlineSmall),
+            Text('Your shelf is waiting',
+                style: Theme.of(context).textTheme.headlineSmall),
             const SizedBox(height: 8),
             const Text(
               'Save anime, games and stories here so your next obsession is always one tap away.',
@@ -291,7 +301,8 @@ class EmptyLibrary extends StatelessWidget {
 }
 
 class AnimatedLikeButton extends StatelessWidget {
-  const AnimatedLikeButton({super.key, required this.selected, required this.onTap});
+  const AnimatedLikeButton(
+      {super.key, required this.selected, required this.onTap});
 
   final bool selected;
   final VoidCallback onTap;
@@ -306,14 +317,16 @@ class AnimatedLikeButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: selected ? AppColors.lavender : AppColors.surface,
         shape: BoxShape.circle,
-        border: Border.all(color: selected ? AppColors.lavender : AppColors.line),
+        border:
+            Border.all(color: selected ? AppColors.lavender : AppColors.line),
       ),
       child: IconButton(
         onPressed: onTap,
         padding: EdgeInsets.zero,
         icon: AnimatedSwitcher(
           duration: const Duration(milliseconds: 220),
-          transitionBuilder: (child, animation) => ScaleTransition(scale: animation, child: child),
+          transitionBuilder: (child, animation) =>
+              ScaleTransition(scale: animation, child: child),
           child: Icon(
             selected ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
             key: ValueKey(selected),
