@@ -21,7 +21,7 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.fandom_verse"
         // Firebase Auth (and Google/Apple sign-in) require minSdk 23+
-        minSdk = 23
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         // Uses the version code from pubspec.yaml.
         versionCode = flutter.versionCode
